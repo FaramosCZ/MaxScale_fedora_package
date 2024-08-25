@@ -78,6 +78,9 @@ rm %{buildroot}%{_sysconfdir}/init.d/maxscale
 # Create a directory for the logrotate log
 mkdir -p %{buildroot}%{_localstatedir}/log/maxscale
 
+# TODO: fix upstream
+chmod -x %{buildroot}%{_mandir}/man1/maxscale.1.gz
+
 %check
 %ctest
 
