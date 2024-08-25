@@ -81,6 +81,9 @@ mkdir -p %{buildroot}%{_localstatedir}/log/maxscale
 # TODO: fix upstream
 chmod -x %{buildroot}%{_mandir}/man1/maxscale.1.gz
 
+# TODO: fix upstream ?
+mv %{_sysconfdir}/logrotate.d/maxscale_logrotate %{_sysconfdir}/logrotate.d/maxscale
+
 %check
 %ctest
 
@@ -99,7 +102,7 @@ chmod -x %{buildroot}%{_mandir}/man1/maxscale.1.gz
 %{_sysconfdir}/ld.so.conf.d/maxscale.conf
 %config(noreplace) %{_sysconfdir}/prelink.conf.d/maxscale.conf
 
-%{_sysconfdir}/logrotate.d/maxscale_logrotate
+%{_sysconfdir}/logrotate.d/maxscale
 %{_localstatedir}/log/maxscale
 
 %{_libdir}/maxscale
